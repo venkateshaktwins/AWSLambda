@@ -17,7 +17,7 @@ jobs:
 
       - name: Zip Lambda function
         run: |
-          zip -r lambda.zip helloworld.py $(pip freeze | awk -F'[=]' '{print $1}' | tr '\n' ' ')
+          zip -r lambda.zip lambda_function.py $(pip freeze | awk -F'[=]' '{print $1}' | tr '\n' ' ')
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
